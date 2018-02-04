@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Wallet</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <button ion-button color="secondary" block>Thêm Tiền</button>
+  <br>
+  <div>Thêm gần đây</div>
+  <hr>
+
+  <ion-card *ngFor="let item of listItem" (click)="openMenu(item)">
+    <ion-item>
+      <ion-icon name="pricetag" item-left large></ion-icon>
+      <h2>{{item.title}}</h2>
+      <p>+{{item.price}}</p>
+    </ion-item>
+    <ion-item>
+      <span item-left>{{item.date}}</span>
+      <span item-right>{{item.time}}</span>
+    </ion-item>
+  </ion-card>
+</ion-content>
